@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pizza Menu</title>
+</head>
+<body x-data="pizzaMenu">
+    <h1>Perfect Pizza</h1>
+
+    <div class="shopping-cart">
+        <div class="pizza-size">
+            <div>Small</div>
+            <div>
+                <button @click="incrementQuantity('Small')">+</button>
+                <button @click="decrementQuantity('Small')">-</button>
+                <span class="pizza-price">31.99</span>
+            </div>
+        </div>
+        <div class="pizza-size">
+            <div>Medium</div>
+            <div>
+                <button @click="incrementQuantity('Medium')">+</button>
+                <button @click="decrementQuantity('Medium')">-</button>
+                <span class="pizza-price">58.99</span>
+            </div>
+        </div>
+        <div class="pizza-size">
+            <div>Large</div>
+            <div>
+                <button @click="incrementQuantity('Large')">+</button>
+                <button @click="decrementQuantity('Large')">-</button>
+                <span class="pizza-price">87.99</span>
+            </div>
+        </div>
+
+        <div class="message" x-text="message"></div>
+        <div class="payment-amount">
+            Payment amount: <input type="text" x-model="totalAmount" readonly>
+        </div>
+        <div>
+            <button @click="pay">Pay</button>
+        </div>
+    </div>
+
+    <div class="clearfix main">
+        <div class="med">
+            <img class="imgmed icons" src="https://user-images.githubusercontent.com/34037/167314003-8ded537d-4bb2-447f-b27c-5545631b1904.png" width="150">
+            <div class="descriptions">
+                <h2 class="medh2">Medium Pizzas</h2>
+                <h3>R58.99</h3>
+                <div class="medp">
+                    Medium vegetarian and meat pizzas with 3 toppings of your choice.
+                </div>
+            </div>
+        </div>
+        <div class="large">
+            <img class="imglarge icons" src="https://user-images.githubusercontent.com/34037/167314003-8ded537d-4bb2-447f-b27c-5545631b1904.png" width="200">
+            <div class="descriptions">
+                <h2 class="largeh2">Large Pizzas</h2>
+                <h3>R87.99</h3>
+                <div class="largep">
+                    Large vegetarian and meat pizzas with 3 toppings of your choice.
+                </div>
+            </div>
+        </div>
+        <div class="small">
+            <img class="imgsmall icons" src="https://user-images.githubusercontent.com/34037/167314003-8ded537d-4bb2-447f-b27c-5545631b1904.png" width="110">
+            <div class="descriptions">
+                <h2 class="smallh2">Small Pizzas</h2>
+                <h3>R31.99</h3>
+                <div class="smallp">
+                    Small vegetarian and meat pizzas with 3 toppings of your choice.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix footer">
+        <div class="left-footer">
+            <p>Contact us at 021-541-1000</p>
+            <p>twitter/fb/insta: </p>
+            <p>@Perfectpizza</p>
+        </div>
+        <div class="right-footer">
+            <p>Pizza plaza</p> 
+            <p>Dough Road</p> 
+            <p>Base Town</p>  
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0/dist/alpine.min.js" charset="UTF-8"></script>
+    <script src="alpineJS.js" charset="UTF-8"></script>
+</body>
+</html>
